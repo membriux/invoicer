@@ -1,6 +1,6 @@
 # invoicer-generator
 
-Automatically generate invoice each month :)
+Automatically generate your invoice each month and just worry about the hours! :)
 
 <img src="https://user-images.githubusercontent.com/20372706/134823265-7a8df2ce-5d66-444a-b4c7-e54b2641d1b1.gif" width=750 alt="walkthrough">
 
