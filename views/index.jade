@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  .container
+    .row
+      h1= title
+      
+      form.row.g-3(action='/generate', method='post')
+        .col-12
+          //- p#initialDate(style="display:none;")= initialDate
+          //- p#interval(style="display:none;")= interval
+          p#company(style="display:none;")= company
+          //- p#initDate(style="display:none;")= initDate
+          p#initDate= initDate
+          p Current Cycle: 
+            b#currentCycleText
+          p Cycle Dates: 
+            b.cycleInit
+            b -> 
+            b.cycleEnd(name='cycleEnd')
+            input.company(name='company', type='hidden')
+            input.cycleEnd.form-control(name='cycleEnd' type='hidden')
+            input.cycleInit.form-control(name='cycleInit' type='hidden')
+        .col-6
+          label.form-label Hours
+          input.form-control(name='hours'  type='number')
+        .col-6  
+          label.form-label Invoice Cycle
+          input#cycle.form-control(name='cycle' type='number' min='1' onChange="onCycleChange()")
+        .col-12
+          button#submit.btn.btn-primary(type='submit' formmethod='post' onclick='refresh()') Generate Invoice
+
+  .container  
+    .row
+      .col
+        br  
+        h3 Preview
+        iframe(src='invoice.pdf' width='500' height='678')
+
+  
+  script(src="js/#{type}.js")
+  script(src="js/dynamic.js")
+
+          
+
