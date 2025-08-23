@@ -7,14 +7,18 @@
     "dev": "nodemon app.js"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "^4.21.2",
-    "http-errors": "~1.6.3",
-    "jade": "^0.29.0",
-    "morgan": "^1.10.1"
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.4",
+    "express": "^4.18.2",
+    "http-errors": "^2.0.0",
+    "pug": "^3.0.2",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

@@ -25,9 +25,9 @@ block content
           input.form-control(name='hours'  type='number')
         .col-6  
           label.form-label Invoice Cycle
-          input#cycle.form-control(name='cycle' type='number' min='1' onChange="onCycleChange()")
+          input#cycle.form-control(name='cycle' type='number' min='1')
         .col-12
-          button#submit.btn.btn-primary(type='submit' formmethod='post' onclick='refresh()') Generate Invoice
+          button#submit.btn.btn-primary(type='submit' formmethod='post') Generate Invoice
 
   .container  
     .row
@@ -37,8 +37,16 @@ block content
         iframe(src='invoice.pdf' width='500' height='678')
 
   
-  script(src="js/#{type}.js")
-  script(src="js/dynamic.js")
+  script(src='js/' + type + '.js')
+  script(src='js/dynamic.js')
+  script.
+    document.getElementById('cycle').addEventListener('change', function() {
+      onCycleChange();
+    });
+    
+    document.getElementById('submit').addEventListener('click', function() {
+      refresh();
+    });
 
           
 

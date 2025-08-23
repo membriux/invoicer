@@ -1,15 +1,15 @@
 
 
-let address = "NAME \Address Street\nCITY \n Zipcode"
+let address = "Membriux Consulting \n 19647 Adair Dr\nCastro Valley \n CA 94546"
 // date when you started sending invoices, make sure to adjust so it aligns with your invoice cycle
-let initialDate = "8/1/2021"
+let initialDate = "8/22/2025"
 
 let companyOptions = {
-    mlh: {
-        header: 'COMPANY_NAME (i.e. TechPro Inc.',
-        address: 'Major League Hacking PBC, Inc. \n149 East 23rd Street #438 \nNew York, NY 10159',
-        rate: 20,
-        task: 'Admissions Specialist (Evaluations, interviews, shadowing interviews/evaluations, application reviews, code reviews, training)'
+    codepath: {
+        header: 'Codepath.org',
+        address: '5214F Diamond Hts Blvd, Unit #1154  \nSan Francisco, CA 94131',
+        rate: 65,
+        task: 'Technical Career Coach'
     }
 
 }
