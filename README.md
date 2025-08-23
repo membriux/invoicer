@@ -6,9 +6,15 @@ Automatically generate your invoice each month and just worry about the hours! :
 
 ## Setup
 
-1. Configure your invoice settings through `config.js` 
-2. Deploy through Heroku (It asks for credit card but it's FREE) --> [**Deploy Node.js App to Heroku**](https://devcenter.heroku.com/articles/deploying-nodejs#deploy-your-application-to-heroku)
-   -  Or run locally :)
+1. **Configure your invoice settings** through `config.js` 
+2. **Set up Invoice Generation API Key**:
+   - Get a free API key from [Invoice-Generator.com](https://invoice-generator.com)
+   - Create a free account → Settings → API Keys → New API Key
+   - Create a `.env` file in your project root:
+     ```bash
+     INVOICE_API_KEY=your_actual_api_key_here
+     ```
+3. Run locally :) `npm run dev` or `npm run start`
 
 ## Tech Stack 🍔
 

@@ -18,7 +18,7 @@ block content
             b.cycleInit
             b -> 
             b.cycleEnd(name='cycleEnd')
-            input.company(name='company', type='hidden')
+
             input.cycleEnd.form-control(name='cycleEnd' type='hidden')
             input.cycleInit.form-control(name='cycleInit' type='hidden')
         .col-12
@@ -41,7 +41,7 @@ block content
       .col
         br  
         h3 Preview
-        iframe(src='invoice.pdf' width='500' height='678')
+        iframe#pdfPreview(src='invoice.pdf' width='500' height='678')
 
   
   script(src=`js/${type}.js`)
