@@ -9,9 +9,18 @@ let companyOptions = {
         header: 'Codepath.org',
         address: '5214F Diamond Hts Blvd, Unit #1154  \nSan Francisco, CA 94131',
         rate: 65,
-        task: 'Technical Career Coach'
+        task: 'Technical Career Coach',
+        description: 'Technical Career Coaching Services',
+        initialDate: '8/22/2025'
+    },
+    freelancer: {
+        header: 'Freelance Client',
+        address: '123 Business St\nSan Francisco, CA 94105',
+        rate: 75,
+        task: 'Web Development',
+        description: 'Custom web development services',
+        initialDate: '1/1/2025'
     }
-
 }
 
 module.exports = { initialDate, address, companyOptions }

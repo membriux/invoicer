@@ -38,6 +38,4 @@ let createInvoice = function (data) {
    };
 }
 
-const invoice =
-
-   module.exports = createInvoice
+module.exports = createInvoice

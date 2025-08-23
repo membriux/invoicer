@@ -11,6 +11,7 @@ block content
           //- p#interval(style="display:none;")= interval
           p#company(style="display:none;")= company
           p#initDate(style="display:none;")= initDate
+          p#companyData(style="display:none;")= JSON.stringify(companies)
           p Current Cycle: 
             b#currentCycleText
           p Cycle Dates: 
@@ -20,6 +21,12 @@ block content
             input.company(name='company', type='hidden')
             input.cycleEnd.form-control(name='cycleEnd' type='hidden')
             input.cycleInit.form-control(name='cycleInit' type='hidden')
+        .col-12
+          label.form-label Company
+          select#companySelect.form-select(name='company')
+            - for (var companyKey in companies)
+              option(value=companyKey selected=companyKey === company)= companies[companyKey].header
+          small.form-text.text-muted#companyInfo
         .col-6
           label.form-label Hours
           input.form-control(name='hours'  type='number')
@@ -37,7 +44,7 @@ block content
         iframe(src='invoice.pdf' width='500' height='678')
 
   
-  script(src='js/' + type + '.js')
+  script(src=`js/${type}.js`)
   script(src='js/dynamic.js')
   script.
     document.getElementById('cycle').addEventListener('change', function() {

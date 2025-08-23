@@ -2,16 +2,21 @@ var express = require('express');
 var router = express.Router();
 let generateInvoice = require('../invoice/invoice_api')
 let createInvoice = require('../invoice/invoice')
-let { initialDate } = require('../config')
+let { initialDate, companyOptions } = require('../config')
 var fs = require('fs');
 
 
 router.get('/', function (req, res, next) {
+  // Get the first company as default
+  const companies = Object.keys(companyOptions);
+  const defaultCompany = companies[0];
+  
   res.render('index', {
     title: 'Invoice Generator',
-    type: 'mlh-cycle',
-    company: 'mlh',
-    initDate: initialDate
+    type: 'company-cycle',
+    company: defaultCompany,
+    companies: companyOptions,
+    initDate: companyOptions[defaultCompany].initialDate
   })
 })
 
