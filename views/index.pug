@@ -12,11 +12,11 @@ block content
           p#company(style="display:none;")= company
           p#initDate(style="display:none;")= initDate
           p#companyData(style="display:none;")= JSON.stringify(companies)
-          p Current Cycle: 
+          p Current Bi-Weekly Cycle: 
             b#currentCycleText
-          p Cycle Dates: 
+          p Cycle Dates (14 days): 
             b.cycleInit
-            b -> 
+            b  →  
             b.cycleEnd(name='cycleEnd')
 
             input.cycleEnd.form-control(name='cycleEnd' type='hidden')
@@ -31,8 +31,9 @@ block content
           label.form-label Hours
           input.form-control(name='hours'  type='number')
         .col-6  
-          label.form-label Invoice Cycle
+          label.form-label Bi-Weekly Cycle #
           input#cycle.form-control(name='cycle' type='number' min='1')
+          small.form-text.text-muted Each cycle = 14 days
         .col-12
           button#submit.btn.btn-primary(type='submit' formmethod='post') Generate Invoice
 

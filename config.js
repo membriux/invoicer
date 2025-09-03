@@ -1,5 +1,6 @@
 
 
+let companyName = "Membriux Consulting"
 let address = "Membriux Consulting \n 19647 Adair Dr\nCastro Valley \n CA 94546"
 
 let companyOptions = {
@@ -9,7 +10,7 @@ let companyOptions = {
         rate: 65,
         task: 'Technical Career Coach',
         description: 'Technical Career Coaching Services',
-        initialDate: '8/22/2025'
+        initialDate: '8/18/2025'
     },
     freelancer: {
         header: 'Freelance Client',
@@ -21,5 +22,5 @@ let companyOptions = {
     }
 }
 
-module.exports = { address, companyOptions }
+module.exports = { companyName, address, companyOptions }
 
