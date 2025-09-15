@@ -12,9 +12,8 @@ let createInvoice = function (data) {
    let company = companyOptions[data.company]
 
    let date = new Date(data.cycleEnd)
-   date.setDate(date.getDate() + 1)
-   let dueDate = new Date(date)
-   dueDate.setDate(dueDate.getDate() + 25)
+   let dueDate = new Date(data.cycleEnd)
+   dueDate.setDate(dueDate.getDate() + 14)
 
    date = date.toString().slice(0, 16)
    dueDate = dueDate.toString().slice(0, 16)

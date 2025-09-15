@@ -15,7 +15,10 @@ class CompanyInvoiceManager {
 
     // Get initial date for current company (when Cycle #1 starts)
     getInitialDate() {
-        return new Date(this.companyData[this.currentCompany].initialDate);
+        const dateStr = this.companyData[this.currentCompany].initialDate;
+        // Parse date string as MM/DD/YYYY to avoid timezone issues
+        const [month, day, year] = dateStr.split('/');
+        return new Date(year, month - 1, day);
     }
 
     // Calculate current bi-weekly cycle number
