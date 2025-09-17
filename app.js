@@ -51,9 +51,28 @@ app.use(function(err, req, res, next) {
 
 // Host web app on specific port
 const port = process.env.PORT || 3000;
-app.listen(port, function() {
-  console.log('Your web app is running... on http://localhost:' + port)
-})
+const host = process.env.HOST || '0.0.0.0';
 
+const server = app.listen(port, host, function() {
+  console.log(`Server running on ${host}:${port}`);
+  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+});
+
+// Graceful shutdown handling
+process.on('SIGTERM', () => {
+  console.log('SIGTERM signal received: closing HTTP server');
+  server.close(() => {
+    console.log('HTTP server closed');
+    process.exit(0);
+  });
+});
+
+process.on('SIGINT', () => {
+  console.log('SIGINT signal received: closing HTTP server');
+  server.close(() => {
+    console.log('HTTP server closed');
+    process.exit(0);
+  });
+});
 
 module.exports = app;
